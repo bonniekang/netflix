@@ -1,17 +1,27 @@
 import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+
+const Header = styled.header``;
+const List = styled.ul`
+    display: flex;
+`;
+const Item = styled.li``;
+const Nav = styled(Link)``;
+
 
 export default () => (
-    <header>
-        <ul>
-            <li>
-                <a href="/">Movies</a>
-            </li>
-            <li>
-                <a href="/tv">TV</a>
-            </li>
-            <li>
-                <a href="/search">Search</a>
-            </li>
-        </ul>
-    </header>
+    <Header>
+        <List>
+            <Item>
+                <Nav to="/">Movies</Nav>
+            </Item>
+            <Item>
+                <Nav to="/tv">TV</Nav>
+            </Item>
+            <Item>
+                <Nav to="/search">Search</Nav>
+            </Item>
+        </List>
+    </Header>
 )
