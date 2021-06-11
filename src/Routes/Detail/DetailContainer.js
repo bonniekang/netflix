@@ -1,17 +1,16 @@
 import React from "react"
-import DetailPresenter from "./DetailPresenter"
+import DetailPresenter from "./DetailPresenter.js"
 
 export default class extends React.Component {
     state={
-        tvDetail: null,
-        movieDetail: null,
-        loading: false,
+        result: null,
+        loading: true,
         error: null
     }
     render() {
-        const { tvDetail, movieDetail, loading, error } = this.state;
+        const { result, loading, error } = this.state;
         return (
-            <DetailPresenter tvDetail={tvDetail} movieDetail={movieDetail} loading={loading} error={error} />
+            <DetailPresenter result={result} loading={loading} error={error} />
         )
     }
 }
