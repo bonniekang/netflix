@@ -1,8 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components"
+import Section from "../../Components/Section"
 
-const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error}) => null;
+const Container = styled.div`
+    padding: 0 10px;
+`;
+
+const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error}) => loading ? null : 
+<Container>
+    {nowPlaying && nowPlaying.length > 0 && <Section title="Now Playing" />}
+</Container>;
 
 HomePresenter.propTypes = {
     nowPlaying: PropTypes.array,
