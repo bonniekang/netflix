@@ -12,15 +12,15 @@ const Container = styled.div`
 
 const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error}) => loading ? <Loader /> : 
 <Container>
-    {nowPlaying && nowPlaying.length > 0 && <Section title="Now Playing">{nowPlaying.map(movie => <Poster />)}</Section>}
+    {nowPlaying && nowPlaying.length > 0 && <Section title="Now Playing">{nowPlaying.map(movie => <Poster key={movie.id} id={movie.id} isMovie={true} title={movie.original_title} rating={movie.vote_average} year={movie.release_date.substring(0, 4)} imageUrl={movie.poster_path}/>)}</Section>}
     {upcoming && upcoming.length > 0 && (
         <Section title="Upcoming Movies">
-          {upcoming.map(movie => <Poster />)}
+          {upcoming.map(movie => <Poster key={movie.id} id={movie.id} isMovie={true} title={movie.original_title} rating={movie.vote_average} year={movie.release_date.substring(0, 4)} imageUrl={movie.poster_path} />)}
         </Section>
       )}
     {popular && popular.length > 0 && (
         <Section title="Popular Movies">
-          {popular.map(movie => <Poster />)}
+          {popular.map(movie => <Poster key={movie.id} id={movie.id} isMovie={true} title={movie.original_title} rating={movie.vote_average} year={movie.release_date.substring(0, 4)} imageUrl={movie.poster_path} />)}
         </Section>
       )}
       {error && <Message color="#e74c3c" text={error}/>}
