@@ -1,5 +1,5 @@
 import React from "react"
-import { moviesApi } from "../../api.js";
+import { moviesApi, tvApi } from "../../api.js";
 import DetailPresenter from "./DetailPresenter.js"
 
 export default class extends React.Component {
@@ -10,7 +10,7 @@ export default class extends React.Component {
             result: null,
             loading: true,
             error: null,
-            isMovie = pathname.includes("/movie/")
+            isMovie: pathname.includes("/movie/")
         }
     }
 

@@ -7,7 +7,12 @@ const Container = styled.div``
 
 const Title = styled.span``
 
-const Grid = styled.div``
+const Grid = styled.div`
+margin-top: 25px;
+display: grid;
+grid-template-columns: repeat(auto-fill, 125px);
+grid-gap: 25px;
+`
 
 const Section = ({ title, children }) => (
     <Container>
@@ -17,7 +22,7 @@ const Section = ({ title, children }) => (
   );
 
 Section.propTypes = {
-    title: propTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node
