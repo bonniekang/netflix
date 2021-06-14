@@ -11,12 +11,21 @@ export default class extends React.Component{
         loading: false
     }
 
-    handleSubmit = () => {
+    handleSubmit = (e) => {
+        e.preventDefault();
         const { searchTerm } = this.state;
         if(searchTerm !== ""){
             this.searchByTerm()
         }
     }
+
+    updateTerm = (e) => {
+        const { target: {value} } = e;
+        this.setState({
+            searchTerm: value
+        })
+    }
+
     searchByTerm = async () => {
         const { searchTerm } = this.state;
         this.setState({loading:true})
@@ -38,9 +47,9 @@ export default class extends React.Component{
 
 
     render() {
-        const { movieResults, tvResults, error, searchTerm, loading} = this.state;
+        const { movieResults, tvResults, error, searchTerm, loading, updateTerm} = this.state;
         return (
-        <SearchPresenter searchTerm={searchTerm} movieResults={movieResults} tvResults={tvResults} error={error} loading={loading} handleSubmit={this.handleSubmit}/>
+        <SearchPresenter searchTerm={searchTerm} movieResults={movieResults} tvResults={tvResults} error={error} loading={loading} handleSubmit={this.handleSubmit} updateTerm={this.updateTerm}/>
         )
     }
 }
