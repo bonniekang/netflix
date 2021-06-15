@@ -74,7 +74,7 @@ const DetailPresenter = ({ result, loading, error}) => loading ? ( <Loader /> ) 
         bgImage={`https://image.tmdb.org/t/p/original${result.backdrop_path}`}
       />
     <Content>
-        <Cover bgImage={result.backdrop_path ? `https://image.tmdb.org/t/p/original${result.poster_path}` : require("../../assets/noPosterSmall.png")}/>
+        <Cover bgImage={result.backdrop_path ? `https://image.tmdb.org/t/p/original${result.poster_path}` : require("../../assets/noPoster.png")}/>
         <Data>
             <Title>{result.original_title ? result.original_title : result.original_name}</Title>
             <ItemContainer>

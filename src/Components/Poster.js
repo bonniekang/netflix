@@ -7,21 +7,9 @@ const Container = styled.div`
     font-size: 12px;
 `;
 
-const ImageContainer = styled.div`
-    margin-bottom: 5px;
-    position: relative;
-    &:hover{
-        ${Image}{
-            opacity: 0.3;
-        }
-        ${Rating}{
-            opacity: 1;
-        }
-    }
-`;
 
 const Image = styled.div`
-    background-image: url(${props => props.bgUrl})
+    background-image: url(${props => props.bgUrl});
     background-size: cover;
     height: 180px;
     background-position: center center;
@@ -34,6 +22,19 @@ const Rating = styled.div`
     opacity: 0;
     position: absolute;
     transition: opacity 0.1s linear;
+`;
+
+const ImageContainer = styled.div`
+    margin-bottom: 5px;
+    position: relative;
+    &:hover{
+        ${Image}{
+            opacity: 0.3;
+        }
+        ${Rating}{
+            opacity: 1;
+        }
+    };
 `;
 
 const Title = styled.div`
