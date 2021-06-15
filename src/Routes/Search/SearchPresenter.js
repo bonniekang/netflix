@@ -6,15 +6,19 @@ import Section from "../../Components/Section"
 import Message from "../../Components/Message"
 import Poster from "../../Components/Poster"
 
-const Container = styled.div``;
+const Container = styled.div`
+    padding: 20px;
+`;
 
 const Form = styled.form`
+margin-bottom: 50px;
 width: 100%;
 `;
 
 const Input = styled.input`
  all: unset;
  width: 100%;
+ font-size: 28px;
 `;
 
 const SearchPresenter = ({ movieResults, tvResults, searchTerm, loading, error, handleSubmit, updateTerm}) => <Container>
@@ -29,7 +33,7 @@ const SearchPresenter = ({ movieResults, tvResults, searchTerm, loading, error, 
                 imageUrl={show.poster_path}
                 title={show.original_name}
                 rating={show.vote_average}
-                year={show.first_air_date.substring(0, 4)}
+                year={show.first_air_date ? show.first_air_date.substring(0, 4) : " "}
               />))}</Section>)}
         {error && <Message color="#e74c3c" text={error}/>}
         {tvResults && movieResults && tvResults.length === 0 && movieResults.length === 0 && (<Message color="#95a5a6" text="Nothing found."/>)}
