@@ -1,6 +1,6 @@
 # Netflix
 
-Netflix style Movie Discovery App built by React and ES6.
+Netflix style Movie Discovery website built by React and ES6.
 
 [Have a look!](https://confident-shirley-8a2f38.netlify.app)
 
