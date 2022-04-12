@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = styled.header`
     color: white;
@@ -22,7 +22,6 @@ const Item = styled.li`
     width: 80px;
     height: 50px;
     text-align: center;
-    border-bottom: 3px solid ${props => (props.current ? "red" : "transparent")};
     transition: border-bottom 0.5s ease-in-out;
 `;
 const Nav = styled(Link)`
@@ -33,18 +32,22 @@ const Nav = styled(Link)`
 `;
 
 
-export default withRouter(({location: { pathname }}) => (
-    <Header>
-        <List>
-            <Item current={pathname === "/"}>
-                <Nav to="/">Movies</Nav>
-            </Item >
-            <Item current={pathname === "/tv"}>
-                <Nav to="/tv">TV</Nav>
-            </Item>
-            <Item current={pathname === "/search"}>
-                <Nav to="/search">Search</Nav>
-            </Item>
-        </List>
-    </Header>
-))
+ function NavBar(){
+     return(
+        <Header>
+            <List>
+                <Item>
+                    <Nav to="/">Movies</Nav>
+                </Item >
+                <Item>
+                    <Nav to="/tv">TV</Nav>
+                </Item>
+                <Item>
+                    <Nav to="/search">Search</Nav>
+                </Item>
+            </List>
+        </Header>
+     )
+ }
+
+ export default NavBar;
