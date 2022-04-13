@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useQuery } from 'react-query'
 import styled from "styled-components";
 import { getMovies, IGetMoviesResult } from '../api'
@@ -24,13 +25,60 @@ const Title = styled.h2`
 `
 
 const Overview = styled.p`
-    font-size: 30px;
+    font-size: 20px;
     width: 50%;
+    font-weight: 300;
 `
+const Slider = styled.div`
+    position:relative;
+`
+
+const Row = styled.div`
+    display:grid;   
+    grid-auto-flow:column;  
+    grid-gap:10px; 
+    margin:30px;
+    overflow:hidden;
+`
+
+const Box = styled.div<{bgPhoto:string}>`
+    background-color: white;
+    width: 200px;
+    height: 200px;
+    font-size: 66px;
+    background-image: url(${(props) => props.bgPhoto});
+    background-size: cover;
+    background-position: center center;
+`
+const Left = styled.button`
+    position:absolute;
+    left: 0;
+    z-index: 100;
+    top: 50%;
+`
+
+const Right = styled.button`
+    position:absolute;
+    right: 0;
+    z-index: 100;
+    top: 50%;
+`
+const offset = 6;
+
 
 function Home(){
     const {data, isLoading} = useQuery<IGetMoviesResult>(["movies", "nowPlaying"], getMovies);
-    console.log(data)
+    const [index, setIndex] = useState(0)
+
+    const increaseIndex = () => {
+        if(data){
+            const total = data.results.length -1;
+            const maxIdx = Math.floor(total / offset) - 1;
+            setIndex((prev) => (prev === maxIdx ? 0 : prev + 1))
+        }
+    }
+
+
     return(
         <Wrapper>
             {isLoading ? (
@@ -41,6 +89,16 @@ function Home(){
                         <Title>{data?.results[0].title}</Title>
                         <Overview>{data?.results[0].overview}</Overview>
                     </Banner>
+                    <Slider>
+                        <Left>left</Left>
+                        <Row>
+                            {data?.results.slice(1).map((movie) => (
+                                <Box bgPhoto={makeImgPath(movie.backdrop_path, "w500")}>
+                                </Box>
+                            ))}
+                        </Row>
+                        <Right>right</Right>
+                    </Slider>
                 </>
             )}
         </Wrapper>
