@@ -4,7 +4,6 @@ import Home from './Routes/Home'
 import Tv from './Routes/Tv'
 import Search from './Routes/Search'
 import NavBar from './Components/NavBar'
-import GlobalStyles from "./Components/GlobalStyles.jsx"
 
 function App () {
   return (

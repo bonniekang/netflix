@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const Header = styled.header`
+const Header = styled.nav`
     color: white;
     position: fixed;
     top: 0;
@@ -11,12 +11,15 @@ const Header = styled.header`
     height: 50px;
     display: flex;
     align-items: center;
-    background-color: rgba(20, 20, 20, 0.8);
+    font-size: 14px;
+    background-color: black;
     z-index: 10;
     box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.8);
 `;
 const List = styled.ul`
     display: flex;
+    align-items: center;
+    list-style: none;
 `;
 const Item = styled.li`
     width: 80px;
