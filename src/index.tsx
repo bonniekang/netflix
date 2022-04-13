@@ -1,7 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom";
+import { RecoilRoot } from "recoil";
+import { QueryClient, QueryClientProvider } from "react-query";
 import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('root')
+const client = new QueryClient();
+
+
+ReactDOM.render(
+    <React.StrictMode>
+        <RecoilRoot>
+            <QueryClientProvider client={client}>
+                <App />
+            </QueryClientProvider>
+        </RecoilRoot>
+    </React.StrictMode>, document.getElementById('root')
 );
 
