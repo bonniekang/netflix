@@ -70,14 +70,6 @@ function Home(){
     const {data, isLoading} = useQuery<IGetMoviesResult>(["movies", "nowPlaying"], getMovies);
     const [index, setIndex] = useState(0)
 
-    const increaseIndex = () => {
-        if(data){
-            const total = data.results.length -1;
-            const maxIdx = Math.floor(total / offset) - 1;
-            setIndex((prev) => (prev === maxIdx ? 0 : prev + 1))
-        }
-    }
-
 
     return(
         <Wrapper>
