@@ -4,6 +4,15 @@ Netflix style Movie Discovery website built by React and ES6.
 
 [Have a look!](https://confident-shirley-8a2f38.netlify.app)
 
+# Netflix Vol. 2 (2022.04 ~ Ongoing)
+
+## Updates
+- Typescript
+- React Hooks, React Query
+- Recoil for the global state management
+- Convert a React Class Component to a Function Component
+
+# Netflix Vol. 1
 ## Pages
 
 - Home : show movies of three sections (now playing / upcoming movies / popular movies ) 
