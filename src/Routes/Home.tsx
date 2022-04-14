@@ -113,8 +113,6 @@ const BigOverview = styled.p`
     position: absolute;
 `
 
-const offset = 6;
-
 
 function Home(){
     const history = useHistory();

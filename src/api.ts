@@ -20,6 +20,15 @@ export interface IGetMoviesResult {
     total_results: number;
 }
 
+export interface IGetSearchResult {
+    page : number;
+    results : IMovie[];
+}
+
 export function getMovies(){
     return fetch(`${BASE_PATH}/movie/now_playing?api_key=${API_KEY}`).then((response) => response.json())
+}
+
+export function getSearch(keyword : any){
+    return fetch(`${BASE_PATH}/search/movie?api_key=${API_KEY}&query=${keyword}`).then((response) => response.json())
 }
