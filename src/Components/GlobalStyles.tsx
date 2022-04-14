@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 import reset from "styled-reset"
 
-const globalStyles = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
     ${reset};
     a{
         text-decoration: none;
@@ -19,4 +19,4 @@ const globalStyles = createGlobalStyle`
     }
 `;
 
-export default globalStyles;
+export default GlobalStyles;
