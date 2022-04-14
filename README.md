@@ -1,4 +1,4 @@
-# Netflix
+# Netflix Clone Project
 
 Netflix style Movie Discovery website built by React and ES6.
 
@@ -7,10 +7,24 @@ Netflix style Movie Discovery website built by React and ES6.
 # Netflix Vol. 2 (2022.04 ~ Ongoing)
 
 ## Updates
-- Typescript
+- TypeScript
 - React Hooks, React Query
 - Recoil for the global state management
 - Convert a React Class Component to a Function Component
+
+## Backlogs
+- Update TV Component
+- Styling search results by adding modals or page links
+- Add more movie lists on the home page
+- Update Header styling (eg. add a Netflix logo ..)
+
+## Quick Preview
+<img width="1440" alt="Screenshot 2022-04-14 at 17 03 33" src="https://user-images.githubusercontent.com/61943384/163341491-127bcbee-96e4-41af-9d94-90468ae05efd.png">
+
+<img width="1440" alt="Screenshot 2022-04-14 at 17 03 56" src="https://user-images.githubusercontent.com/61943384/163341549-c1329109-e1ad-4e95-b1b1-3647cf0a302f.png">
+
+<img width="1440" alt="Screenshot 2022-04-14 at 17 47 33" src="https://user-images.githubusercontent.com/61943384/163349073-0ff473b7-9da1-48a2-9a11-2d09aebaa9a7.png">
+
 
 # Netflix Vol. 1
 ## Pages
