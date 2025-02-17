@@ -4,7 +4,7 @@ Netflix style Movie Discovery website built by React and ES6.
 
 [Have a look!](https://confident-shirley-8a2f38.netlify.app)
 
-# Netflix Vol. 2 (2022.04 ~ Ongoing)
+# Netflix Vol. 2 (2022.04)
 
 ## Updates
 - TypeScript
